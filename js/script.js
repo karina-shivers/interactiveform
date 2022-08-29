@@ -1,4 +1,3 @@
-
 const nameField = document.querySelector('#name');
 const otherJobField = document.querySelector('#other-job-role');
 const jobRoleSelect = document.querySelector('#title');
