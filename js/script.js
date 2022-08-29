@@ -5,7 +5,7 @@ const jobRoleSelect = document.querySelector('#title');
 
 nameField.focus();
 
-// shows and hides other field depending on job role
+//  job role selector
 otherJobField.style.display = 'none';
 jobRoleSelect.addEventListener('change', (e) => {
     const selected = e.target.value;
@@ -24,7 +24,7 @@ const heartJsColors = document.querySelectorAll('[data-theme="heart js"]');
 // shirt color options are disabled until a design option is selected
 shirtColorSelect.disabled = true;
 
-// event listener for changes in design selection. this adds/removes hidden attribute to shirt colors
+//  this adds/removes hidden attribute to shirt colors
 shirtDesignSelect.addEventListener('change', (e) => {
     const selected = e.target.value;
     const jsPunsOption = shirtDesignSelect[1];
@@ -48,7 +48,7 @@ const activitiesCost = document.querySelector('#activities-cost');
 const activityFieldset = document.querySelector('#activities');
 let totalCost = 0;
 
-// listen for changes in activities. when change occurs for loop adds cost of activity to total price if checked
+// change occurs for loop adds cost of activity to total price if checked
 
 activityFieldset.addEventListener('change', (e) => {
     const checked = e.target;
@@ -64,7 +64,7 @@ activityFieldset.addEventListener('change', (e) => {
 
     activitiesCost.innerHTML = `Total: $${totalCost}`;
 
-    // when checked activity time & day matches other activities, disable conflicting activities
+    // when checked the activity time & day matches other activities. it disable conflicting activities
     for (let i = 0; i < activities.length; i++) {
         const activity = activities[i];
         const activityDayTime = activity.getAttribute('data-day-and-time')
@@ -84,13 +84,13 @@ const creditCard = document.querySelector('#credit-card');
 const payPal = document.querySelector('#paypal');
 const bitCoin = document.querySelector('#bitcoin');
 
-// starts automatically on credit card
+// starts  on credit card
 paymentSelect[1].selected = true;
 creditCard.hidden = false;
 payPal.hidden = true;
 bitCoin.hidden = true;
 
-// when user selects payment menthod it shows only the selected one and others are hidden
+// when user selects the payment menthod it shows only the selected one and others are hidden
 paymentSelect.addEventListener('change', (e) => {
     const selected = e.target.value;
     for (let i = 0; i < paymentMethods.length; i++) {
@@ -183,22 +183,18 @@ function invalidActivityField(fieldset) {
     fieldset.lastElementChild.classList.remove('hint');
 }
 
-/**
- * This function changes the styling of valid fields.
- * 
- * @param {variable} field variable containing the field you want to style as valid
- */
+// This function changes the styling of valid fields.
+ @param {variable} field variable containing the field you want to style as valid
+ 
 function validField(field) {
     field.parentElement.classList.add('valid');
     field.parentElement.classList.remove('not-valid');
     field.parentElement.lastElementChild.classList.add('hint');
 }
 
-/**
- * This function changes the styling of valid activity fieldset.
- * 
- * @param {variable} fieldset variable containing the fieldset you want to style as valid
- */
+// This function changes the styling of valid activity fieldset
+  @param {variable} fieldset variable containing the fieldset you want to style as valid
+ 
 function validActivityField(fieldset) {
     fieldset.parentElement.classList.add('valid');
     fieldset.parentElement.classList.remove('not-valid');
@@ -349,7 +345,7 @@ cvvField.addEventListener('keyup', () => {
     }
 });
 
-// adds more obvious focus indicator to activities when tabbing through
+// adds  obvious focus indicator to activities when tabbing through
 for (let i = 0; i < activities.length; i++) {
     const activityLabels = document.querySelectorAll('#activities label');
     const activity = activities[i];
