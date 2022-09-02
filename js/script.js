@@ -183,7 +183,7 @@ function invalidActivityField(fieldset) {
 }
 
 // This function changes the styling of valid fields.
- @param {variable} field variable containing the field you want to style as valid
+ 
  
 function validField(field) {
     field.parentElement.classList.add('valid');
@@ -191,8 +191,7 @@ function validField(field) {
     field.parentElement.lastElementChild.classList.add('hint');
 }
 
-// This function changes the styling of valid activity fieldset
-  @param {variable} fieldset variable containing the fieldset you want to style as valid
+
  
 function validActivityField(fieldset) {
     fieldset.parentElement.classList.add('valid');
