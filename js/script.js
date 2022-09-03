@@ -345,6 +345,21 @@ cvvField.addEventListener('keyup', () => {
         validField(cvvField);
     }
 });
+// accesbility 
+function validationPass(element) {
+    let parameterParent = element.parentElement;
+	parameterParent.classList.add('valid');
+	parameterParent.classList.remove('not-valid');
+	element.nextElementSibling.style.display = 'none';
+}
+
+function validationFail(element) {
+    let parameterParent = element.parentElement;
+	parameterParent.classList.add('not-valid');
+	parameterParent.classList.remove('valid');
+	element.nextElementSibling.style.display = 'block';
+}
+
 
 // adds  obvious focus indicator to activities when tabbing through
 for (let i = 0; i < activities.length; i++) {
